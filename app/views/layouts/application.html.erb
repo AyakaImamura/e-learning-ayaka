@@ -1,19 +1,19 @@
 <!DOCTYPE html><!--全てに共通させたいものはapplication.html.erbに書く-->
 <html>
-  <head>
+<head>
     <title>ELearning</title><!--タブのタイトル-->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+</head>
 
-  <body>
+<body>
     <%= render 'layouts/header'%>
-      <div class="container">
-        <%= yield %>
-      </div>
+        <div class="container">
+            <%= yield %>
+        </div>
     <%= render 'layouts/footer'%>
-  </body>
+</body>
 </html>
