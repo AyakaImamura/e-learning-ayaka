@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!--全てに共通させたいものはapplication.html.erbに書く-->
 <html>
   <head>
-    <title>ELearning</title>
+    <title>ELearning</title><!--タブのタイトル-->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,10 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header'%>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <%= render 'layouts/footer'%>
   </body>
 </html>
