@@ -1,0 +1,19 @@
+<div class="login_bg">
+    <br>
+    <div class="jumbotron w-50 ">
+        <h1 class="text-center">Login</h1>
+        <div class="container">
+            <%= form_for(:session, url: sessions_new_path) do |f| %>
+                <%= f.label :email %>
+                <%= f.text_field :email, class: "form-control"%>
+
+                <%= f.label :password %>
+                <%= f.password_field :password, class: "form-control"%>
+
+                <br>
+                
+                <%= f.submit "LOGIN", class: "btn btn-outline-info btn-block"%>
+            <% end %>
+        </div>
+    </div>
+</div>
