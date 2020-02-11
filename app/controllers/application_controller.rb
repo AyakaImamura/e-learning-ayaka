@@ -1,2 +1,5 @@
 class ApplicationController < ActionController::Base
+  include SessionsHelper
 end
+#セッションコントローラーで書いたものはセッションヘルパーでしかつかえない
+#includeSessionHelperを書くことで、セッションコントローラーで書いたものを全てのヘルパーで使えるように
