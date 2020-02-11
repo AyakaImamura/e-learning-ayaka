@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  #サインアップページ
   def new
     @user = User.new
   end
