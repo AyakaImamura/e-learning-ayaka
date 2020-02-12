@@ -11,6 +11,9 @@
     <%= f.label :password_confirmation, "Confirmation" %>
     <%= f.text_field :password_confirmation, class: "form-control"%>
 
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+
     <br>
 
     <%= f.submit "SUBMIT", class: "btn btn-block btn-primary" %>
