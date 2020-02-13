@@ -1,4 +1,5 @@
 @import "bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 .signup_bg{
   background-image: url(login_bg_pic.jpg);
@@ -29,4 +30,45 @@
   background-size: cover;
   width: inherit;
   height: 90vh;
+}
+
+.index_bg{
+  background-image: url(index_bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: inherit;
+  height: 90vh;
+}
+
+.admin_new_bg{
+  background-image: url(admin_new_bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: inherit;
+  height: 90vh;
+}
+
+.des_form{
+  height: 150px; 
+}
+
+.admin_title{
+  margin-bottom:80px;
+  font-family: 'Source Serif Pro', serif;
+  font-family: 'Dosis', sans-serif;
+  font-size:3.5rem;
+}
+
+.index_box{
+  width:700px;
+  height:300px;
+  position: absolute;
+  top:50%;
+  left:50%;
+  margin-left:-350px;
+  margin-top:-150px;
+  padding:25px;
+  background-color: rgba(142, 175, 175, 0.5);
 }

@@ -1,0 +1,17 @@
+<div class="admin_new_bg">
+    <br>
+    <h1 class="text-center">New Category</h1>
+    <div class="container w-50">
+        <%= form_for(:category, url: admin_categories_path) do |f| %>
+            <%= f.label :title %>
+            <%= f.text_field :title, class: "form-control" %>
+
+            <%= f.label :description %>
+            <%= f.text_field :description, class: "form-control des_form" %>
+
+            <br>
+
+            <%= f.submit "SUBMIT", class: "btn btn-block btn-primary" %>
+        <% end %>
+    </div>
+<div>
