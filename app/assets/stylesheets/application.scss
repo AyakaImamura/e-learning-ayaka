@@ -64,11 +64,35 @@
 .index_box{
   width:700px;
   height:300px;
-  position: absolute;
-  top:50%;
-  left:50%;
-  margin-left:-350px;
-  margin-top:-150px;
+  margin: 0 auto;
+  margin-top: 50px;
   padding:25px;
   background-color: rgba(142, 175, 175, 0.5);
+}
+
+/*index table including categories*/
+
+.index_category_table{
+  width:700px;
+  margin:0 auto;
+}
+
+table{
+  width:700px;
+  border:solid 1.5px white;
+  border-collapse: collapse;
+  background-color: rgba(189, 243, 238, 0.87);
+}
+
+table th, table td{
+  padding : 20px 10px;
+  border:solid 1.5px white;
+}
+
+/*paginateのデザイン*/
+
+.paginate{
+  nav {
+    display: inline-block;
+  }
 }

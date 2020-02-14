@@ -4,6 +4,8 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def index
+    #@categories = Category.all 全部表示させる
+    @categories = Category.paginate(page: params[:page], per_page:5)
   end
 
   def create
@@ -13,6 +15,13 @@ class Admin::CategoriesController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+  end
+
+  def update
+
   end
 
   private

@@ -1,7 +1,41 @@
 <div class="index_bg">
+    <br>
     <div class="index_box text-center">
         <br>
         <h1 class="admin_title">Administer Categories</h1><!--Administer = 管理する-->
         <%= link_to "New Category", new_admin_category_path, class: "btn bg-info btn-lg btn-block text-white" %>
+    </div>
+
+    <br>
+
+    <div class="paginate text-center">
+        <%= will_paginate %>
+    </div>
+    <div class="index_category_table">
+        <table>
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Description</td>
+                    <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @categories.each do |category| %>
+                    <tr>
+                        <td><%= category.title %></td>
+                        <td><%= category.description %></td>
+                        <td>
+                            <%= link_to "Edit", edit_admin_category_path(category) %>/
+                            <%= link_to "Delete", admin_category_path(category), method: :delete %>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <br>
+    <div class="paginate text-center">
+        <%= will_paginate %>
     </div>
 </div>
