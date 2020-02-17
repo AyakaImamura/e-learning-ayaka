@@ -32,7 +32,7 @@
   height: 90vh;
 }
 
-.index_bg{
+.index_bg,.word_bg{
   background-image: url(index_bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -41,7 +41,7 @@
   height: 90vh;
 }
 
-.admin_new_bg{
+.admin_new_bg,.word_new_bg{
   background-image: url(admin_new_bg.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -54,14 +54,14 @@
   height: 150px; 
 }
 
-.admin_title{
+.admin_title,.word_title{
   margin-bottom:80px;
   font-family: 'Source Serif Pro', serif;
   font-family: 'Dosis', sans-serif;
   font-size:3.5rem;
 }
 
-.index_box{
+.index_box,.word_box{
   width:700px;
   height:300px;
   margin: 0 auto;
@@ -95,4 +95,15 @@ table th, table td{
   nav {
     display: inline-block;
   }
+}
+
+/*word編集のshowページ*/
+.word_box{
+  background-color: rgba(186, 199, 127, 0.5);
+}
+
+/*新規作成のnewページと、編集editページの透過コンテナ*/
+.new_edit_container{
+  background-color:rgba(255, 255, 255, 0.40);
+  border-radius: 5px;
 }

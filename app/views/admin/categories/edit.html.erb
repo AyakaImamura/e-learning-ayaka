@@ -1,6 +1,7 @@
 <div class="admin_new_bg">
     <br>
-    <div class="container w-50">
+    <div class="container new_edit_container w-50">
+        <br>
         <h1 class="text-center">Edit Category</h1>
         <%= form_for([:admin,@category]) do |f| %>
             <%= f.label :title %>
@@ -13,6 +14,7 @@
 
             <%= f.submit "SAVE CHANGES", class: "btn btn-block btn-primary" %>
         <% end %>
+        <br>
     </div>
     <br>
     <div>

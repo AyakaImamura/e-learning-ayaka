@@ -1,0 +1,26 @@
+<div class="word_new_bg">
+    <br>
+    <div class="container new_edit_container w-50">
+        <br>
+        <h1 class="text-center">Make Word&Choices</h1>
+        <%= form_for([:admin,@word]) do |f| %>
+            <%= f.label :content %>
+            <%= f.text_field :content, class: "form-control" %>
+            <br>
+
+            <%= f.label :choices %>
+            <%= f.text_field :content, class: "form-control mb-3" %><!--まだchoicesのモデルを作成していないので仮でコンテントにする-->
+            <%= f.text_field :content, class: "form-control mb-3" %>
+            <%= f.text_field :content, class: "form-control mb-3" %>
+
+            <br>
+
+            <%= f.submit "CREATE", class: "btn btn-block btn-primary mb-3" %>
+        <% end %>
+        <br>
+    </div>
+    <br>
+    <div>
+        <%= link_to "＜＜　Back to Index", admin_categories_path, class: "text-white" %>
+    </div>
+<div>
