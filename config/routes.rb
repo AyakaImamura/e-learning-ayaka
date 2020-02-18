@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create] # 9行目と10行目が存在するから、:newや:logoutは必要ない(なくてもエラーは出ないけど、たくさんルーツがでて見づらい)
   
   namespace :admin do
-    resources :categories
-    resources :words
+    resources :categories do
+      resources :words
+    end
   end
 
   get '/signup', to: 'users#new'

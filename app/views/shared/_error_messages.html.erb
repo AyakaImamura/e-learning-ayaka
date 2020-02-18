@@ -1,0 +1,12 @@
+<% if object.errors.any? %><%#たくさんのオブジェクトのなかから何かエラーがないか探す%>
+    <div class="alert alert-danger">
+        <div><%#複数エラーがあったときはエラーメッセージを表示/ prohibited this action= このアクションは禁止されている%>
+            <%= pluralize(object.errors.count,"error")%> prohibited this action:
+        </div>
+        <ul>
+            <%object.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <%end%>
+        </ul>
+    </div>
+<% end %>

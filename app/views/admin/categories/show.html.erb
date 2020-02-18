@@ -3,7 +3,7 @@
     <div class="word_box text-center">
         <br>
         <h1 class="word_title"><%= @category[:title] %></h1>
-        <%= link_to "New Word", new_admin_word_path, class: "btn bg-info btn-lg btn-block text-white" %>
+        <%= link_to "New Word", new_admin_category_word_path(@category), class: "btn bg-info btn-lg btn-block text-white" %>
     </div>
      <div>
         <%= link_to "＜＜　Back to Index", admin_categories_path, class: "text-white" %>
