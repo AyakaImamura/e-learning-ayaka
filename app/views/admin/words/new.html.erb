@@ -3,18 +3,20 @@
     <div class="container new_edit_container w-50">
         <br>
         <h1 class="text-center">Make Word&Choices</h1>
-        <%= form_for([:admin,@word]) do |f| %>
-            <%= f.label :content %>
+        <%= form_for([:admin, @category, @word]) do |f| %>
+            <%= render "shared/error_messages", object: @word %><%#_error_messagesのパーシャルファイルを引っ張ってきてエラーメッセージを表示%>
+            <%= f.label :word %>
             <%= f.text_field :content, class: "form-control" %>
             <br>
 
-            <%= f.label :choices %>
-            <%= f.text_field :content, class: "form-control mb-3" %><!--まだchoicesのモデルを作成していないので仮でコンテントにする-->
-            <%= f.text_field :content, class: "form-control mb-3" %>
-            <%= f.text_field :content, class: "form-control mb-3" %>
-
+            <%= f.label :choices %><br>
+            <%= f.fields_for :choices do |choice| %>
+                <div class="mb-2">
+                    <%= choice.text_field :content, class: "form-control" %>
+                    <%= choice.check_box :is_correct%>
+                </div>
+            <% end %>
             <br>
-
             <%= f.submit "CREATE", class: "btn btn-block btn-primary mb-3" %>
         <% end %>
         <br>
