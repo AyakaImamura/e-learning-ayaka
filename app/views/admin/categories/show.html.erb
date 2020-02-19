@@ -5,8 +5,37 @@
         <h1 class="word_title"><%= @category[:title] %></h1>
         <%= link_to "New Word", new_admin_category_word_path(@category), class: "btn bg-info btn-lg btn-block text-white" %>
     </div>
-     <div>
+
+    <br>
+
+    <div class="words_show_table">
+        <table>
+            <thead>
+                <tr>
+                    <td>Word</td>
+                    <td>Answer</td>
+                    <td>Actions</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @words.each do |word| %>
+                    <tr>
+                        <td><%= word.content %></td>
+                        <td><%= word.correct_answer %></td>
+                        <td>
+                            <%= link_to "Edit", edit_admin_category_word_path(@category, word) %>/
+                            <%= link_to "Delete", admin_category_word_path(@category, word), method: :delete %>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+
+    <div>
         <%= link_to "＜＜　Back to Index", admin_categories_path, class: "text-white" %>
     </div>
+    
+    <br>
 
 </div>
