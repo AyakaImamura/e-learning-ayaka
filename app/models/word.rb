@@ -8,6 +8,10 @@ class Word < ApplicationRecord
   validate :has_one_correct
   validate :has_unique_choices
 
+  def correct_answer
+    choices.find_by(is_correct: true).content
+  end
+
   private
     def has_one_correct
       if choices.select {|choice| choice.is_correct == true }.count !=1
