@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'answers/new'
   root 'static_pages#home'
   
   resources :users
   resources :sessions, only: [:create] # 9行目と10行目が存在するから、:newや:logoutは必要ない(なくてもエラーは出ないけど、たくさんルーツがでて見づらい)
   resources :categories
+  resources :answers
   
   namespace :admin do
     resources :categories do
