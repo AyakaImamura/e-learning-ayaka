@@ -1,0 +1,18 @@
+<div class="container mt-5 lesson-container">
+    <div class="row">
+        <% @categories.each do |category| %>
+            <div class="col-6">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= category.title %></h5><!--カテゴリ名-->
+                        <p class="card-text"><%= category.description %></p><!--description　説明文-->
+                        <a href="#" class="btn btn-primary float-right">Start Learn</a>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+    <div class="paginate text-center">
+        <%= will_paginate %>
+    </div>
+</div>
