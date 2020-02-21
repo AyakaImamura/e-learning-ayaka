@@ -1,1 +1,29 @@
-<p>This is results!</p>
+<div class="container">
+    <br>
+    <div class="word_title mt-5">
+        <h1 class="text-center"><%= @lesson.category.title %></h1>
+        <h3 class="text-right">
+        Result: <%= @lesson.result %> of <%= @lesson.category.words.count %>
+        </h3>
+    </div>
+    <div class="lessons_show_table">
+        <table>
+            <thead>
+                <tr>
+                    <td>Word</td>
+                    <td>Answer</td>
+                    <td>result</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @lesson.answers.each do |answer| %>
+                    <tr>
+                        <td><%= answer.word.content %></td>
+                        <td><%= answer.choice.content %></td>
+                        <td><%= answer.word.correct_answer %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+</div>
