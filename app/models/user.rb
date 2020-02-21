@@ -10,4 +10,8 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   
   has_many :lessons
+
+  def took_lesson(category)
+    lessons.find_by(category: category)
+  end
 end

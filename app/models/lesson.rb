@@ -8,4 +8,8 @@ class Lesson < ApplicationRecord
   def next_word
     (category.words - words).first
   end
+
+  def lesson_results
+    choices.where(is_correct: true).count
+  end
 end

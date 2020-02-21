@@ -2,8 +2,10 @@ class AnswersController < ApplicationController
   def new  #check if all words are answered
     @answer = Answer.new
     @lesson = Lesson.find(params[:lesson_id])
-    if@lesson.next_word.nil?
-      redirect_to lesson_url(@lesson)
+
+    if @lesson.next_word.nil? #after the last word is finished, return to XXX page
+      @lesson.update(result: @lesson.lesson_results) #lessonsテーブルのresultだけを編集するから
+      redirect_to lesson_url(@lesson) #in show page: @lesson.result
     end
   end
 
