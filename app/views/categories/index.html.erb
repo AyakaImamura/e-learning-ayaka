@@ -6,7 +6,7 @@
                     <div class="card-body">
                         <h5 class="card-title"><%= category.title %></h5><!--カテゴリ名-->
                         <p class="card-text"><%= category.description %></p><!--description　説明文-->
-                        <a href="/answers/new", class="btn btn-primary float-right">Start Learn</a>
+                        <%= button_to "Start Lesson",lessons_path(category_id: category.id), class: "btn btn-primary float-right"%>
                     </div>
                 </div>
             </div>

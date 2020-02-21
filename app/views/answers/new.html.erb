@@ -1,10 +1,16 @@
 <div class="container">
     <div class="answer-container">
         <br>
-        <h1 class="text-center">Word 1</h1>
+        <h1 class="text-center mb-5"><%= @lesson.category.title%></h1>
         <br>
-        <button type="button" class="btn btn-info btn-lg btn-block">Choice1</button>
-        <button type="button" class="btn btn-info btn-lg btn-block">Choice2</button>
-        <button type="button" class="btn btn-info btn-lg btn-block">Choice3</button>
+        <h3 class="text-center mb-4"><%= @lesson.next_word.content %></h3>
+            <% @lesson.next_word.choices.each do |choice| %>
+                <%= form_for([@lesson, @answer]) do |f| %>
+                    <%= f.hidden_field :word_id, value: choice.word_id %>
+                    <%= f.hidden_field :choice_id, value:choice.id%>
+                    <%= f.submit choice.content, class:"btn btn-info btn-lg btn-block mb-4" %>
+                <% end %>
+            <% end %>
     </div>
 </div>
+

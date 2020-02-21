@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   resources :categories
   resources :answers
   
-  namespace :admin do
+  namespace :admin do #namespaceはフォルダを指定,  categoriesはたくさんのwordsを持っているからcateogriesの中に書く
     resources :categories do
       resources :words
     end
+  end
+
+  resources :lessons do #lessonsはいくつものanswersを持つ
+    resources :answers
   end
 
   get '/signup', to: 'users#new'
