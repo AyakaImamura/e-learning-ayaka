@@ -133,3 +133,13 @@ table th, table td{
   margin:0 auto;
   width:60%;
 }
+
+/*users一覧ページ*/
+.each_user_box{
+  border:solid 1.5px rgb(141, 134, 134);
+  border-radius: 3px;
+}
+
+.useravatar{
+  border-radius: 50%;
+}

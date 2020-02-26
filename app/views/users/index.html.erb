@@ -1,0 +1,26 @@
+<% provide(:title, 'Users')%>
+<div class="container">
+    <h1 class="text-center">List of Users</h1>
+    <br>
+    <div class="paginate text-center">
+        <%= will_paginate %>
+    </div>
+    <div class="row justify-content-around">
+            <% @users.each do |user| %>
+                <div class="col-md-5 each_user_box mb-3 p-3">
+                    <% if user.avatar.url != nil %>
+                        <%= image_tag user.avatar.url, class:"mr-2 useravatar", size:60%>
+                        <%= link_to user.name, user%>
+                        <button type="button" class="btn btn-warning float-right mt-2">follow</button>
+                    <% else %>
+                        <%= image_tag "default.JPG", class:"mr-2 useravatar", size:60%>
+                        <%= link_to user.name, user%>
+                        <button type="button" class="btn btn-warning float-right mt-2">follow</button>
+                    <% end %>
+                </div>
+            <% end %>
+    </div>
+    <div class="paginate text-center">
+        <%= will_paginate %>
+    </div>
+</div>

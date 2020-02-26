@@ -64,3 +64,6 @@ gem 'jquery-rails'
 # Adds pages with page numbers
 gem 'will_paginate', '~> 3.2', '>= 3.2.1'
 gem 'will_paginate-bootstrap4', '~> 0.2.2'
+
+# Faker for users index page
+gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
