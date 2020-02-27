@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create] # 9行目と10行目が存在するから、:newや:logoutは必要ない(なくてもエラーは出ないけど、たくさんルーツがでて見づらい)
   resources :categories
   resources :answers
-  
+  resources :relationships
+
   namespace :admin do #namespaceはフォルダを指定,  categoriesはたくさんのwordsを持っているからcateogriesの中に書く
     resources :categories do
       resources :words
