@@ -11,11 +11,11 @@
                     <% if user.avatar.url != nil %>
                         <%= image_tag user.avatar.url, class:"mr-2 useravatar", size:60%>
                         <%= link_to user.name, user%>
-                        <button type="button" class="btn btn-warning float-right mt-2">follow</button>
+                        <%= render "follow_form",user: user%>
                     <% else %>
                         <%= image_tag "default.JPG", class:"mr-2 useravatar", size:60%>
                         <%= link_to user.name, user%>
-                        <button type="button" class="btn btn-warning float-right mt-2">follow</button>
+                        <%= render "follow_form",user: user%>
                     <% end %>
                 </div>
             <% end %>
