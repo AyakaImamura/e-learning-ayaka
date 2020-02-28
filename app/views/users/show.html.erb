@@ -1,1 +1,55 @@
-<p>helloooooo new useeeeer<p>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4 left-box">
+            <div class="card mb-4 pt-4">
+                <%= image_tag current_user.avatar.url, class:"rounded-circle iconpic", size: 150 %>
+                <div class="card-body text-center">
+                    <h5 class="card-title"><%= current_user.name %></h5>
+                    <p class="card-text"><%= current_user.email %></p>
+                </div>
+            </div>
+            <div class="card text-center mb-4 p-4">
+                <%= current_user.following.count %> following
+                <%= current_user.followers.count %> followers
+            </div>
+            <div class="card p-4">
+                <div class="bg-info text-center">
+                words learned
+                </div>
+            </div>
+        </div>
+
+        <div class="col-8 right-box">
+            <div class="card">
+                <div class="bg-info p-1 mb-1">
+                Activity feed
+                </div>
+                <% @activities.each do |activity| %>
+                    <div class="media mb-1">
+                        <% if activity.user.avatar %>
+                            <%= image_tag activity.user.avatar.url, class: "mr-3", size:60 %>
+                        <% else %>
+                            <%= image_tag "default.JPG", class:"mr-3 useravatar", size:60 %>
+                        <% end %>
+                        <div class="media-body p-1">
+                            <h5 class="mt-0">
+                                <%= link_to current_user == activity.user ? "YOU" : activity.user.name, activity.user %>
+                                <% if activity.action_type == "Relationship" %>
+                                    followed <%= activity.action.followed.name %>
+                                <% else %>
+                                    learned <%= activity.action.result %> of <%= activity.action.words.count %> in <%= link_to activity.action.category.title, activity.action %>
+                                <% end %>
+                            </h5>
+                            <small class="text-muted">
+                                <% time_ago_in_words(activity.created_at) %>
+                            </small>
+                        </div>
+                    </div>
+                <% end %>
+                <div class="bg-info p-1" style="height:16px">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
