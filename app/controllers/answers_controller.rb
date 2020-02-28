@@ -5,6 +5,7 @@ class AnswersController < ApplicationController
 
     if @lesson.next_word.nil? #after the last word is finished, return to XXX page
       @lesson.update(result: @lesson.lesson_results) #lessonsテーブルのresultだけを編集するから
+      @lesson.create_activity(user: current_user)
       redirect_to lesson_url(@lesson) #in show page: @lesson.result
     end
   end
@@ -14,7 +15,6 @@ class AnswersController < ApplicationController
     @lesson.answers.create(answer_params)
     redirect_to new_lesson_answer_url(@lesson)
   end
-
 
   private
   def answer_params

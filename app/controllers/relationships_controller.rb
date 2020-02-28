@@ -3,6 +3,9 @@ class RelationshipsController < ApplicationController
         @user = User.find(params[:followed_id])
         current_user.follow(@user)
 
+        relationship = current_user.active_relationships.find_by(followed: @user)
+        relationship.create_activity(user: current_user)
+
         redirect_to users_url
     end
 
