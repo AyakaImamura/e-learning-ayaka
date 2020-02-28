@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-4 left-box">
+            <div class="card mb-4 pt-4">
+                <%= image_tag current_user.avatar.url, class:"rounded-circle iconpic", size: 150 %>
+                <div class="card-body text-center">
+                    <h5 class="card-title"><%= current_user.name %></h5>
+                    <p class="card-text"><%= current_user.email %></p>
+                    <a href="#" class="btn btn-primary">View Profile</a>
+                    <a href="#" class="btn btn-info">Update Profile</a>
+                </div>
+            </div>
+            <div class="card text-center mb-4 p-4">
+                <%= current_user.following.count %> following
+                <%= current_user.followers.count %> followers
+            </div>
+            <div class="card p-4">
+                <div class="bg-info text-center">
+                words learned
+                </div>
+            </div>
+        </div>
+
+        <div class="col-8 right-box">
+            <div class="card">
+                <div class="bg-info p-1">
+                Activity feed
+                </div>
+                <div class="media">
+                    <div class="media-body p-1">
+                        <h5 class="mt-0">HERE IS FOLLOWED NAME</h5>
+                        about XXX hours ago
+                    </div>
+                </div>
+                <div class="bg-info p-1" style="height:16px">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
