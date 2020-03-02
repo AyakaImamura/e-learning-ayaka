@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'answers/new'
+  
   root 'static_pages#home'
   
   resources :users
@@ -12,6 +12,8 @@ Rails.application.routes.draw do
     resources :categories do
       resources :words
     end
+
+    resources :users
   end
 
   resources :lessons do #lessonsはいくつものanswersを持つ

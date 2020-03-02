@@ -1,0 +1,37 @@
+<div class="user_index_bg">
+    <br>
+    <div class="text-center">
+        <h1 class="admin_users_title">Administer Users</h1><!--Administer = 管理する-->
+    </div>
+
+    <br>
+    <div class="paginate text-center">
+        <%= will_paginate %>
+    </div>
+    <div class="index_category_table mb-2">
+        <table>
+            <thead class="font-weight-bold">
+                <tr>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Admin</td>
+                </tr>
+            </thead>
+            <tbody>
+                <% @users.each do |user| %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><%= user.email %></td>
+                        <td>
+                            <%= link_to "Add", "#", class: "btn btn-info mx-auto d-block"%>
+                        </td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </div>
+    <div class="paginate text-center mb-5">
+        <%= will_paginate %>
+    </div>
+    <br>
+</div>
