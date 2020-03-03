@@ -16,18 +16,20 @@
                         <%= current_user.name %><b class="caret"></b>
                     </a> 
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><%=link_to "Profile", current_user, class:"dropdown-item" %></li>
-                        <li><%=link_to "Settings", edit_user_path(current_user), class:"dropdown-item" %></li>
-                        <li class="divider"></li>
-                        <li>
-                            <%=link_to "Sign out", logout_path, method: :delete, class:"dropdown-item" %>
-                        </li>
-                        <li>
-                            <%=link_to "Manage Catefories", admin_categories_path, class:"dropdown-item" %>
-                        </li>
-                        <li>
-                            <%=link_to "Administer Users", admin_users_path, class:"dropdown-item" %>
-                        </li>
+                            <li><%=link_to "Profile", current_user, class:"dropdown-item" %></li>
+                            <li><%=link_to "Settings", edit_user_path(current_user), class:"dropdown-item" %></li>
+                            <li class="divider"></li>
+                            <li>
+                                <%=link_to "Sign out", logout_path, method: :delete, class:"dropdown-item" %>
+                            </li>
+                        <% if current_user.is_admin? %> 
+                            <li>
+                                <%=link_to "Manage Catefories", admin_categories_path, class:"dropdown-item" %>
+                            </li>
+                            <li>
+                                <%=link_to "Administer Users", admin_users_path, class:"dropdown-item" %>
+                            </li>
+                        <% end %>
                     </ul>
                 </li>
               <%else%>
@@ -38,7 +40,6 @@
                     <%= link_to "Login", login_path, class: "nav-link" %>
                 </li>
               <%end%>
-
         </ul>
     </div>
 </nav>
