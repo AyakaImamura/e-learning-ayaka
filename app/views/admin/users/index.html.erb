@@ -23,7 +23,11 @@
                         <td><%= user.name %></td>
                         <td><%= user.email %></td>
                         <td>
-                            <%= link_to "Add", "#", class: "btn btn-info mx-auto d-block"%>
+                            <% if user.is_admin? %>
+                                <%= button_to "Remove", admin_user_path(user), method: :delete, class:"btn btn-info mx-auto d-block"%>
+                            <% else %>
+                                <%= button_to "Add", admin_user_path(user), method: :patch, class:"btn btn-info mx-auto d-block" %>
+                            <% end %>
                         </td>
                     </tr>
                 <% end %>

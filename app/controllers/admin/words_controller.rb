@@ -1,4 +1,6 @@
 class Admin::WordsController < ApplicationController
+  before_action :check_admin
+
   def new
     @category = Category.find(params[:category_id])
     @word = @category.words.new #左記は省略系。Word.new(category_id: params[:category_id])
